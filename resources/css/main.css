@@ -1,0 +1,10 @@
+body{
+    background: darkslategray !important;
+}
+input:focus{
+    transform: scale(1.075) !important;
+    transition: 0.3s;
+}
+.logincontainer{
+    background: #237fec;
+}
