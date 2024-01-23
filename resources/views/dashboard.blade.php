@@ -1,15 +1,70 @@
 <x-app-layout>
-    <x-slot name="header">
+    {{-- <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Dashboard') }}
         </h2>
-    </x-slot>
+    </x-slot> --}}
+    @vite(['resources/css/main.css'])
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <x-welcome />
-            </div>
-        </div>
+      <div id="sidebar" class="sidebar-menu">
+          @auth
+              @include('layouts.sidebar')
+          @endauth
+      </div>
     </div>
+      
+    <div class="content-wrapper">
+      <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="colp-lg-6">
+              <h1 class="m-0">Dashboard</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="card">
+                <h5 class="card-header">Featured</h5>
+                <div class="card-body">
+                  <h5 class="card-title">Special title treatment</h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+              <div class="card">
+                <h5 class="card-header">Featured</h5>
+                <div class="card-body">
+                  <h5 class="card-title">Special title treatment</h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="card">
+                <h5 class="card-header">Featured</h5>
+                <div class="card-body">
+                  <h5 class="card-title">Special title treatment</h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+              <div class="card">
+                <h5 class="card-header">Featured</h5>
+                <div class="card-body">
+                  <h5 class="card-title">Special title treatment</h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
 </x-app-layout>
