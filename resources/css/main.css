@@ -12,7 +12,6 @@ body{
 .logincontainer{
     background: #237fec;
 }
-
 .DisplayTable{
     width:80%;
     background-color:black !important;
@@ -62,4 +61,34 @@ body{
     background-position: top;
     transform:scale(1.1);
 
+=======
+.sidebar-wrapper {
+  position: absolute;
+  width: 250px;
+  height: 100%;
+}
+
+.content-wrapper {
+  margin-left: 250px;
+}
+
+.min-h-screen {
+  min-height: 100% !important;
+}
+
+.content-header {
+  padding: 15px 0.5rem;
+}
+
+.content-header h1 {
+  font-size: 1.8rem;
+  color: #ffff;
+}
+
+.content-wrapper .content {
+  padding: 0 0.5rem;
+}
+
+.card {
+  margin-bottom: 1rem;
 }

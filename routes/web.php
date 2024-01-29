@@ -19,6 +19,12 @@ Route::get('/', function () {
 Route::get('/warehouse', function () {
     return view('warehouse');
 });
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', function () { return view('dashboard'); })->middleware(['auth'])->name('dashboard');
+
 
 Route::middleware([
     'auth:sanctum',
