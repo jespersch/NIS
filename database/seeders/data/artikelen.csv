@@ -1,0 +1,38 @@
+﻿Naam;Verkoopprijs;Categorie;Voorraad;Minimale voorraad;Afbeelding
+Sporthandschoen; € 19,99 ;Accessoires;200;50;a01
+Fietshandschoen; € 22,99 ;Accessoires;300;150;a03
+Kraag; € 14,99 ;Accessoires;300;75;a02
+Zwarte muts; € 15,99 ;Accessoires;500;200;a04
+Witte muts; € 15,99 ;Accessoires;400;50;a05
+Zwarte pet; € 7,99 ;Accessoires;400;150;a06
+Bruine pet; € 8,99 ;Accessoires;250;50;a07
+Bermuda; € 49,99 ;Broeken;350;100;b01
+Sportbroek - Zwart - Kort; € 29,99 ;Broeken;450;150;b02
+Turnbroek; € 69,99 ;Broeken;375;125;b03
+Sportbroek Jerry; € 59,99 ;Broeken;500;200;b04
+Sportbroek Mitchel; € 59,99 ;Broeken;600;250;b05
+Joggingbroek; € 49,99 ;Broeken;400;175;b06
+Trainingsjack - Heren; € 79,99 ;Jassen;500;200;j01
+Hickingjack - Blauw; € 69,99 ;Jassen;250;125;j02
+Trainingsjack - Vrouwen; € 79,99 ;Jassen;500;200;j03
+Regenjas - Rood; € 39,99 ;Jassen;200;75;j04
+Trainingsjack - Merel; € 89,99 ;Jassen;150;50;j05
+Winterjas; € 99,95 ;Jassen;75;25;j06
+Sportsokken - Half - Geel; € 9,99 ;Onderkleding;350;100;o07
+Fietsbroek; € 39,95 ;Onderkleding;250;75;o01
+Sportsokken - Half - Grijs; € 9,95 ;Onderkleding;200;50;o02
+Short; € 19,95 ;Onderkleding;400;150;o03
+Sportsokken - Lang; € 12,95 ;Onderkleding;400;150;o04
+Sporttop - Lena; € 29,95 ;Onderkleding;250;50;o05
+Sporttop - Crystal; € 34,95 ;Onderkleding;350;175;o06
+Haltershirt - Blauw; € 29,95 ;Shirts;250;125;s01
+T-Shirt  - Zwart; € 19,95 ;Shirts;600;200;s02
+T-Shirt  - Blauw; € 19,95 ;Shirts;600;200;s03
+Joggingshirt - Lange mouw; € 24,95 ;Shirts;500;200;s04
+Joggingshirt - Korte mouw; € 21,95 ;Shirts;600;250;s05
+Joggingvest - Dames; € 79,95 ;Truien en vesten;400;200;t01
+Sweatshirt; € 49,99 ;Truien en vesten;300;150;t02
+Trainingsvest - Dames; € 69,95 ;Truien en vesten;300;150;t03
+Trainingsvest - Heren; € 69,95 ;Truien en vesten;400;150;t04
+Trui  -Rood; € 39,95 ;Truien en vesten;350;175;t05
+Sweatvest - Rood; € 29,95 ;Truien en vesten;350;175;t06

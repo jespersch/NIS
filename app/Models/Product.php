@@ -2,12 +2,21 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    protected $table = 'producten';
-    protected $primaryKey = 'Naam';
-    public $incrementing = false;
-    public $timestamps = false;
+  
+    use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'price',
+        'category',
+        'stock',
+        'minstock',
+        'picture'
+    ];
+
 }

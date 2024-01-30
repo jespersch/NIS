@@ -1,14 +1,67 @@
 body{
     background: darkslategray !important;
 }
-input:focus{
-    transform: scale(1.075) !important;
+
+.logincontainer input{
     transition: 0.3s;
+}
+.logincontainer input:focus{
+    transform: scale(1.075) !important;
+
 }
 .logincontainer{
     background: #237fec;
 }
+.DisplayTable{
+    width:80%;
+    background-color:black !important;
+}
+.DisplayTable thead{
+    background-color:black !important;
+}
+.DisplayTable th, .DisplayTable td{
+    vertical-align:middle;
+    padding: 10px 20px 10px 20px;
+}
+.orderButton{
+    background:blue;
+    padding:10px 20px 10px 20px;
+    width:80%;
+    margin-left:10%;
+    border-radius:10px;
+}
 
+.confirmOrderButton{
+    padding: 10px 20px 10px 20px;
+    border-radius:10px;
+    background: #54d054;
+    color:white;
+    background: linear-gradient(to bottom, #57f357 50%, #94f894 50%);
+    background-size: 100% 200%;
+    background-position:  bottom;
+    transition:300ms, background 1s;
+}
+.confirmOrderButton:hover{
+    background-position: top;
+    transform:scale(1.1);
+
+}
+
+.cancelOrderButton{
+    padding: 5px 10px 5px 10px;
+    border-radius:10px;
+    background: #54d054;
+    color:white;
+    background: linear-gradient(to bottom, #ff0000 50%, #f35757 50%);
+    background-size: 100% 200%;
+    background-position:  bottom;
+    transition:300ms, background 1s;
+}
+.cancelOrderButton:hover{
+    background-position: top;
+    transform:scale(1.1);
+
+=======
 .sidebar-wrapper {
   position: absolute;
   width: 250px;
