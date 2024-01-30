@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+  
     use HasFactory;
 
     protected $fillable = [
@@ -17,4 +18,5 @@ class Product extends Model
         'minstock',
         'picture'
     ];
+
 }
