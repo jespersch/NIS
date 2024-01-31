@@ -4,13 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\MaterialsStock;
 use Illuminate\Support\Facades\View;
 
 class DashboardController extends Controller
 {
     public function index()
     {
-      $lowStockProducts = Product::whereColumn('stock', '<', 'minstock')->get();
+
+        $lowStockProducts = Product::whereColumn('stock', '<', 'minstock')->get();
+        $lowStockMaterials = MaterialsStock::whereColumn('stock', '<', 'minstock')->get();
 
         $time = now();
         $hour = $time->hour;
@@ -25,6 +28,6 @@ class DashboardController extends Controller
             $greeting = 'Goedenacht';
         }
 
-        return view('dashboard', compact('lowStockProducts', 'greeting'));
+        return view('dashboard', compact('lowStockProducts', 'lowStockMaterials', 'greeting'));
     }
 }
