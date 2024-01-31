@@ -11,6 +11,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
+
         $lowStockProducts = Product::whereColumn('stock', '<', 'minstock')->get();
         $lowStockMaterials = MaterialsStock::whereColumn('stock', '<', 'minstock')->get();
 

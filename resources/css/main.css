@@ -57,7 +57,7 @@ body{
     background-position:  bottom;
     transition:300ms, background 1s;
 }
-.cancelOrderButton:hover{
+.cancelOrderButton:hover {
     background-position: top;
     transform:scale(1.1);
 }
