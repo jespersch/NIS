@@ -29,22 +29,22 @@
           <div class="row">
             <div class="col-lg-6">
               <div class="card">
-                <h5 class="card-header">Voorraad artikelen</h5>
+                <h5 class="card-header">Stock artikelen</h5>
                 <div class="card-body p-0">
                   <table class="table table-striped table-valign-middle">
                     <thead>
                       <tr>
-                          <th>Naam</th>
-                          <th>Voorraad</th>
-                          <th>Minimale voorraad</th>
+                          <th>Name</th>
+                          <th>Stock</th>
+                          <th>Min stock</th>
                       </tr>
                     </thead>
                     <tbody>
                       @foreach($lowStockProducts as $product)
                           <tr>
-                              <td>{{ $product->Naam }}</td>
-                              <td style="color: red;">{{ $product->Voorraad }}</td>
-                              <td style="color: green;">{{ $product->Minimale_voorraad }}</td>
+                              <td>{{ $product->name }}</td>
+                              <td style="color: red;">{{ $product->stock }}</td>
+                              <td style="color: green;">{{ $product->minstock }}</td>
                           </tr>
                       @endforeach
                   </tbody>
@@ -52,11 +52,26 @@
                 </div>
               </div>
               <div class="card">
-                <h5 class="card-header">Featured</h5>
-                <div class="card-body">
-                  <h5 class="card-title">Special title treatment</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                <h5 class="card-header">Stock materials</h5>
+                <div class="card-body p-0">
+                  <table class="table table-striped table-valign-middle">
+                    <thead>
+                      <tr>
+                          <th>Name</th>
+                          <th>Stock</th>
+                          <th>Min stock</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      @foreach($lowStockMaterials as $material)
+                          <tr>
+                              <td>{{ $material->material }}</td>
+                              <td style="color: red;">{{ $material->stock }}</td>
+                              <td style="color: green;">{{ $material->minstock }}</td>
+                          </tr>
+                      @endforeach
+                  </tbody>
+                  </table>
                 </div>
               </div>
             </div>
