@@ -11,13 +11,6 @@ $(document).ready(function () {
 
     // Add a click event for the confirmOrderButton
     $('.confirmOrderButton').click(function () {
-        // Retrieve the material ID from the data-material-id attribute
-        var materialId = $('.orderButton').data('material-id');
-
-        // Perform actions with the materialId (e.g., send it to the server)
-        console.log('Material ID to be ordered: ' + materialId);
-
-        // Close the modal
         $('#orderModal').modal('hide');
     });
 });

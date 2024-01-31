@@ -42,11 +42,8 @@
                                 <input type="number" min="0" class="form-control" id="quantity" wire:model="quantity">
                             </div>
                             <div class="form-group">
-                                <label for="supplier">Supplier:</label>
-                                <input type="text" class="form-control" id="supplier" wire:model="supplier">
-                            </div>
-                            <div class="form-group">
                                 <label for="cost">Cost:</label>
+                                <input id="costhidden" type="hidden" value="{{$selectedMaterial ? $selectedMaterial->cost : null}}">
                                 <h3 id="cost">€0,-</h3>
                             </div>
                         </form>
@@ -54,7 +51,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="cancelOrderButton" data-dismiss="modal">Close</button>
-                    <button type="button" class="confirmOrderButton" wire:click="sendOrder">Order</button>
+                    <button type="button" class="confirmOrderButton" wire:click="sendOrder({{$selectedMaterial ? $selectedMaterial->id : null}})">Order</button>
                 </div>
             </div>
         </div>
@@ -66,7 +63,7 @@
             // Listen for the browser event to open the modal
             $("#quantity").on('input', function() {
                 var quantity = $(this).val();
-                var costPerUnit = {{ $selectedMaterial->cost }};
+                var costPerUnit = $("#costhidden").val();
                 var totalCost = quantity * costPerUnit;
                 $("#cost").text("€" + totalCost + ",-");
             });

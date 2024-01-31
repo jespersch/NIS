@@ -10,7 +10,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
-      $lowStockProducts = Product::whereColumn('Voorraad', '<', 'Minimale_voorraad')->get();
+      $lowStockProducts = Product::whereColumn('stock', '<', 'minstock')->get();
 
         $time = now();
         $hour = $time->hour;
