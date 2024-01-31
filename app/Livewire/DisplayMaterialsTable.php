@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Material;
+use App\Models\Order;
 use Livewire\Component;
 
 class DisplayMaterialsTable extends Component
@@ -33,9 +34,23 @@ class DisplayMaterialsTable extends Component
         $this->dispatch('quantityUpdated', $this->quantity);
     }
 
-//    public function sendOrder(){
-//
-//    }
+    public function getCost(){
+        if ($this->selectedMaterial) {
+            return $this->selectedMaterial->price * $this->selectedMaterial->quantity;
+        }
+    }
+
+    public function sendOrder(){
+        if ($this->selectedMaterial) {
+            Order::create([
+                'ordertype' => 1,
+                'name' => $this->selectedMaterial->material,
+                'quantity' => $this->quantity,
+                'supplier' => $this->selectedMaterial->supplier,
+            ]);
+
+        }
+    }
     public function render()
     {
         return view('livewire.display-materials-table');
