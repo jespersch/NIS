@@ -77,19 +77,9 @@
             </div>
             <div class="col-lg-6">
               <div class="card">
-                <h5 class="card-header">Featured</h5>
+                <h5 class="card-header">Orders</h5>
                 <div class="card-body">
-                  <h5 class="card-title">Special title treatment</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-              <div class="card">
-                <h5 class="card-header">Featured</h5>
-                <div class="card-body">
-                  <h5 class="card-title">Special title treatment</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <canvas id="ordersChart" width="400" height="200"></canvas>
                 </div>
               </div>
             </div>
@@ -99,3 +89,35 @@
     </div>
 
 </x-app-layout>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  var ctx = document.getElementById('ordersChart').getContext('2d');
+
+  var ordersData = {!! json_encode($orders) !!};
+
+  var dates = ordersData.map(order => order.date);
+  var counts = ordersData.map(order => order.count);
+
+  var ordersChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+          labels: dates,
+          datasets: [{
+              label: 'Number of Orders',
+              data: counts,
+              backgroundColor: 'rgba(75, 192, 192, 0.2)',
+              borderColor: 'rgba(75, 192, 192, 1)',
+              borderWidth: 1
+          }]
+      },
+      options: {
+          scales: {
+              y: {
+                  beginAtZero: true
+              }
+          }
+      }
+  });
+</script>
