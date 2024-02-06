@@ -63,16 +63,29 @@ body{
 }
 .cancelOrderButton:hover {
     background-position: top;
-    transform: scale(1.1);
+    transform:scale(1.1);
 }
+
 .sidebar-wrapper {
   position: absolute;
   width: 250px;
   height: 100%;
 }
 
+@media (max-width: 992px) {
+  .sidebar-wrapper {
+    display: none !important;
+  }
+}
+
 .content-wrapper {
   margin-left: 250px;
+}
+
+@media (max-width: 992px) {
+  .content-wrapper {
+    margin-left: 0 !important;
+  }
 }
 
 .min-h-screen {

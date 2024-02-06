@@ -13,7 +13,7 @@ class ProductSeeder extends Seeder
      */
     public function run(): void
     {
-        $csvFile = storage_path('app/public/csv/NaikieDas - Artikelen.csv');
+        $csvFile = storage_path('csv/NaikieDas - Artikelen.csv');
         $open = fopen($csvFile, "r");
 
         if ($open !== false) {

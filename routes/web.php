@@ -18,7 +18,7 @@ use App\Http\Controllers\DashboardController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+  return view('welcome');
 });
 Route::get('/warehouse', function () {
     return view('warehouse');
@@ -35,10 +35,14 @@ Route::get('/', function () {
 })->middleware(['auth'])->name('dashboard');
 
 
+Route::get('/warehouse', function () {
+  return view('warehouse');
+})->name('warehouse');
+
 Route::middleware([
   'auth:sanctum',
   config('jetstream.auth_session'),
   'verified',
 ])->group(function () {
-  Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+  Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });
