@@ -5,16 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\MaterialsStock;
-use Illuminate\Support\Facades\View;
+use App\Models\Order;
+use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
     public function index()
     {
-
+        // Low stock products and materials logic
         $lowStockProducts = Product::whereColumn('stock', '<', 'minstock')->get();
         $lowStockMaterials = MaterialsStock::whereColumn('stock', '<', 'minstock')->get();
 
+        // Greeting logic based on current time
         $time = now();
         $hour = $time->hour;
 
@@ -28,6 +30,11 @@ class DashboardController extends Controller
             $greeting = 'Goedenacht';
         }
 
-        return view('dashboard', compact('lowStockProducts', 'lowStockMaterials', 'greeting'));
+        // Orders data for Chart.js
+        $orders = Order::select(DB::raw("DATE_FORMAT(created_at, '%Y-%m-%d') as date"), DB::raw('count(*) as count'))
+            ->groupBy('date')
+            ->get();
+
+        return view('dashboard', compact('lowStockProducts', 'lowStockMaterials', 'greeting', 'orders'));
     }
 }
