@@ -5,6 +5,8 @@
             <th scope="col">Material</th>
             <th scope="col">Supplier</th>
             <th scope="col">Price</th>
+            <th scope="col">Stock</th>
+            <th scope="col">Minimum Stock</th>
             <th scope="col"></th>
         </tr>
         </thead>
@@ -13,12 +15,21 @@
             <tr>
                 <td>{{ $material->material }}</td>
                 <td>{{ $material->supplier}}</td>
-                <td>{{ $material->cost }}</td>
+                <td>€ {{ $material->cost }}</td>
+                <td>{{$material-> stock}}</td>
+                <td>{{$material-> minstock}}</td>
 
                 <td>
-                    <button class="orderButton"
+
+                    @if($material->stock < $material-> minstock)
+                    <button class="orderButton urgentOrder"
                             wire:click="setMaterialId({{ $material->id }})"> Order
                     </button>
+                    @else
+                        <button class="orderButton "
+                                wire:click="setMaterialId({{ $material->id }})"> Order
+                        </button>
+                    @endif
                 </td>
             </tr>
         @endforeach

@@ -31,6 +31,10 @@ body{
     border-radius:10px;
 }
 
+.urgentOrder{
+    background: red !important;
+}
+
 .confirmOrderButton{
     padding: 10px 20px 10px 20px;
     border-radius:10px;
@@ -103,4 +107,20 @@ body{
 
 .card {
   margin-bottom: 1rem;
+}
+
+.declineButton{
+    background:indianred;
+    padding:10px 20px 10px 20px;
+    width:80%;
+    margin-left:10%;
+    border-radius:10px;
+}
+
+.approveButton{
+    background: #5af35a;
+    padding:10px 20px 10px 20px;
+    width:80%;
+    margin-left:10%;
+    border-radius:10px;
 }

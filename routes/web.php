@@ -20,6 +20,20 @@ use App\Http\Controllers\DashboardController;
 Route::get('/', function () {
   return view('welcome');
 });
+Route::get('/warehouse', function () {
+    return view('warehouse');
+});
+Route::get('/orders', function () {
+    return view('orders');
+});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', function () {
+  return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
 
 Route::get('/warehouse', function () {
   return view('warehouse');

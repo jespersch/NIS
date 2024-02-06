@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Models\Material;
 use App\Models\Order;
+use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
 class DisplayMaterialsTable extends Component
@@ -18,7 +19,12 @@ class DisplayMaterialsTable extends Component
 
 
     public function mount(){
-        $this->data= Material::all();
+        $this->data = DB::table('materials')
+            ->join('materialsstock', function ($join) {
+                $join->on(DB::raw("CONCAT(materials.material, ', ', materials.length, 'm rol')"), '=', 'materialsstock.material');
+            })
+            ->select('materials.*', 'materialsstock.*')
+            ->get();
     }
 
     public function setMaterialId($id)
@@ -46,7 +52,10 @@ class DisplayMaterialsTable extends Component
                 'ordertype' => 1,
                 'name' => $this->selectedMaterial->material,
                 'quantity' => $this->quantity,
+                'length' => $this->selectedMaterial->length,
                 'supplier' => $this->selectedMaterial->supplier,
+                'price' => $this->selectedMaterial->cost,
+                'materialid' => $this->selectedMaterial->id
             ]);
 
         }

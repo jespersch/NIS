@@ -5,15 +5,8 @@
         </h2>
     </x-slot> --}}
     @vite(['resources/css/main.css'])
-    
 
-      <div id="sidebar" class="sidebar-menu">
-          @auth
-              @include('layouts.sidebar')
-          @endauth
-      </div>
-    </div>
-      
+
     <div class="content-wrapper">
       <div class="content-header">
         <div class="container-fluid">

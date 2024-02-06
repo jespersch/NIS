@@ -13,6 +13,9 @@ class Order extends Model
         'name',
         'ordertype',
         'quantity',
-        'supplier'
+        'length',
+        'supplier',
+        'price',
+        'materialid',
     ];
 }

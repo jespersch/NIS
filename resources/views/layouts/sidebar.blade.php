@@ -9,19 +9,7 @@
     <li>
       <a href="#" class="nav-link text-white">
         <i class="bi bi-people"></i>
-        Staff management 
-      </a>
-    </li>
-    <li>
-      <a href="#" class="nav-link text-white">
-        <i class="bi bi-bag"></i>
-         Purchase
-      </a>
-    </li>
-    <li>
-      <a href="#" class="nav-link text-white">
-        <i class="bi bi-person-workspace"></i>
-        Production
+        Staff management
       </a>
     </li>
     <li>
@@ -30,6 +18,19 @@
         Stock
       </a>
     </li>
+    <li>
+      <a href="/orders" class="nav-link text-white">
+        <i class="bi bi-bag"></i>
+         Orders
+      </a>
+    </li>
+    <li>
+      <a href="#" class="nav-link text-white">
+        <i class="bi bi-person-workspace"></i>
+        Production
+      </a>
+    </li>
+
     <li>
       <a href="#" class="nav-link text-white">
         <i class="bi bi-building"></i>
