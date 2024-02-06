@@ -23,6 +23,9 @@ Route::get('/', function () {
 Route::get('/warehouse', function () {
     return view('warehouse');
 });
+Route::get('/orders', function () {
+    return view('orders');
+});
 // Route::get('/', function () {
 //     return view('welcome');
 // });

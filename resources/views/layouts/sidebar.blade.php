@@ -9,13 +9,19 @@
     <li>
       <a href="#" class="nav-link text-white">
         <i class="bi bi-people"></i>
-        Staff management 
+        Staff management
       </a>
     </li>
+      <li>
+          <a href="/warehouse" class="nav-link text-white">
+              <i class="bi bi-bar-chart"></i>
+              Stock
+          </a>
+      </li>
     <li>
-      <a href="#" class="nav-link text-white">
+      <a href="/orders" class="nav-link text-white">
         <i class="bi bi-bag"></i>
-         Purchase
+         Orders
       </a>
     </li>
     <li>
@@ -24,12 +30,7 @@
         Production
       </a>
     </li>
-    <li>
-      <a href="#" class="nav-link text-white">
-        <i class="bi bi-bar-chart"></i>
-        Stock
-      </a>
-    </li>
+
     <li>
       <a href="#" class="nav-link text-white">
         <i class="bi bi-building"></i>

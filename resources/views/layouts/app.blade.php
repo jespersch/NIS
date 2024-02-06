@@ -44,6 +44,12 @@
                 </header>
             @endif
 
+            <div id="sidebar" class="sidebar-menu">
+                @auth
+                    @include('layouts.sidebar')
+                @endauth
+            </div>
+
             <!-- Page Content -->
             <main>
                 {{ $slot }}
