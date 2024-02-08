@@ -35,6 +35,12 @@ class DashboardController extends Controller
             ->groupBy('date')
             ->get();
 
-        return view('dashboard', compact('lowStockProducts', 'lowStockMaterials', 'greeting', 'orders'));
+
+        // Orders data for Chart.js
+        $totalStockData = Product::select('name', DB::raw('sum(stock) as total_stock'))
+         ->groupBy('name')
+         ->get();
+
+        return view('dashboard', compact('lowStockProducts', 'lowStockMaterials', 'greeting', 'orders', 'totalStockData'));
     }
 }
