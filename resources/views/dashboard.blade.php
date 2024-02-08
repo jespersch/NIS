@@ -22,7 +22,13 @@
           <div class="row">
             <div class="col-lg-6">
               <div class="card">
-                <h5 class="card-header">Stock artikelen</h5>
+                <h5 class="card-header">Total Stock</h5>
+                <div class="card-body">
+                  <canvas id="totalStockChart" width="400" height="200"></canvas>
+                </div>
+              </div>
+              <div class="card">
+                <h5 class="card-header">Stock articles</h5>
                 <div class="card-body p-0">
                   <table class="table table-striped table-valign-middle">
                     <thead>
@@ -42,6 +48,14 @@
                       @endforeach
                   </tbody>
                   </table>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="card">
+                <h5 class="card-header">Orders</h5>
+                <div class="card-body">
+                  <canvas id="ordersChart" width="400" height="200"></canvas>
                 </div>
               </div>
               <div class="card">
@@ -65,14 +79,6 @@
                       @endforeach
                   </tbody>
                   </table>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="card">
-                <h5 class="card-header">Orders</h5>
-                <div class="card-body">
-                  <canvas id="ordersChart" width="400" height="200"></canvas>
                 </div>
               </div>
             </div>
@@ -100,6 +106,36 @@
           datasets: [{
               label: 'Number of Orders',
               data: counts,
+              backgroundColor: 'rgba(75, 192, 192, 0.2)',
+              borderColor: 'rgba(75, 192, 192, 1)',
+              borderWidth: 1
+          }]
+      },
+      options: {
+          scales: {
+              y: {
+                  beginAtZero: true
+              }
+          }
+      }
+  });
+</script>
+
+<script>
+  var ctxTotalStock = document.getElementById('totalStockChart').getContext('2d');
+
+  var totalStockData = {!! json_encode($totalStockData) !!};
+
+  var productNames = totalStockData.map(product => product.name);
+  var totalStockCounts = totalStockData.map(product => product.total_stock);
+
+  var totalStockChart = new Chart(ctxTotalStock, {
+      type: 'bar',
+      data: {
+          labels: productNames,
+          datasets: [{
+              label: 'Total Stock',
+              data: totalStockCounts,
               backgroundColor: 'rgba(75, 192, 192, 0.2)',
               borderColor: 'rgba(75, 192, 192, 1)',
               borderWidth: 1
