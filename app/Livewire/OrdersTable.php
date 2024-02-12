@@ -14,7 +14,7 @@ class OrdersTable extends Component
     private $approvedOrder;
 
     public function mount(){
-        $this->data= Order::all();
+        $this->data= Order::where('ordertype', '1')->get();
     }
 
     public function refreshOrders(){
@@ -23,14 +23,10 @@ class OrdersTable extends Component
 
     public function approveOrder($id, $materialname){
         $approvedOrder = Order::where('id', $id)->first();
-
-        Log::info($approvedOrder);
         $materialOrder= MaterialsStock::where('material', $materialname)->first();
         $newStock = $materialOrder->stock + $approvedOrder->quantity;
         $materialOrder->stock = $newStock;
         $materialOrder->save();
-        Log::info($materialOrder);
-
         $approvedOrder->delete();
         $this->refreshOrders();
 
