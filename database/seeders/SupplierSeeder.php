@@ -13,7 +13,7 @@ class SupplierSeeder extends Seeder
      */
     public function run(): void
     {
-        $csvFile = storage_path('csv/NaikieDas - Leveranciers.csv');
+        $csvFile = storage_path('app/public/csv/NaikieDas - Leveranciers.csv');
         $open = fopen($csvFile, "r");
 
         if ($open !== false) {

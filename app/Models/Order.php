@@ -17,5 +17,6 @@ class Order extends Model
         'supplier',
         'price',
         'materialid',
+        'productid',
     ];
 }

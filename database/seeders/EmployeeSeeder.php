@@ -14,7 +14,7 @@ class EmployeeSeeder extends Seeder
      */
     public function run(): void
     {
-        $csvFile = storage_path('csv/NaikieDas - Personeel.csv');
+        $csvFile = storage_path('app/public/csv/NaikieDas - Personeel.csv');
         $open = fopen($csvFile, "r");
 
         if ($open !== false) {

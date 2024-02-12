@@ -16,10 +16,11 @@ return new class extends Migration
             $table->integer("ordertype");
             $table->string("name");
             $table->integer("quantity");
-            $table->integer('length');
+            $table->integer('length')->nullable();
             $table->string("supplier")->nullable();
-            $table->decimal("price");
-            $table->integer("materialid");
+            $table->decimal("price")->nullable();
+            $table->integer("materialid")->nullable();
+            $table->integer("productid")->nullable();
             $table->timestamps();
         });
     }

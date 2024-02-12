@@ -13,7 +13,7 @@ class MaterialSeeder extends Seeder
      */
     public function run(): void
     {
-        $csvFile = storage_path('csv/NaikieDas - Grondstoffen.csv');
+        $csvFile = storage_path('app/public/csv/NaikieDas - Grondstoffen.csv');
         $open = fopen($csvFile, "r");
 
         if ($open !== false) {

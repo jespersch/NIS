@@ -34,7 +34,9 @@
 
         <div class="min-h-screen">
             @livewire('navigation-menu')
-
+                @auth
+                    @include('layouts.sidebar')
+                @endauth
             <!-- Page Heading -->
             @if (isset($header))
                 <header class="bg-white shadow">
@@ -44,11 +46,7 @@
                 </header>
             @endif
 
-            <div id="sidebar" class="sidebar-menu">
-                @auth
-                    @include('layouts.sidebar')
-                @endauth
-            </div>
+
 
             <!-- Page Content -->
             <main>

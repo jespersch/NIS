@@ -46,7 +46,8 @@ class DisplayMaterialsTable extends Component
         }
     }
 
-    public function sendOrder(){
+    public function sendOrder(): void
+    {
         if ($this->selectedMaterial) {
             Order::create([
                 'ordertype' => 1,

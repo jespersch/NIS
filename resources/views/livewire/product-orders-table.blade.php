@@ -1,7 +1,6 @@
 <div class="content-wrapper">
-
-    <div class="d-flex justify-content-center mt-4">
-        <h1 class=" tableTitle">Material orders</h1>
+    <div class="d-flex justify-content-center">
+        <h1 class=" tableTitle">Product orders</h1>
     </div>
     <table class="table table-striped table-bordered DisplayTable mx-auto mt-3">
         <thead>
@@ -9,8 +8,6 @@
             <th scope="col">Order type</th>
             <th scope="col">Material</th>
             <th scope="col">Quantity</th>
-            <th scope="col">Supplier</th>
-            <th scope="col">Price</th>
             <th scope="col"></th>
             <th scope="col"></th>
         </tr>
@@ -22,13 +19,9 @@
                 <td>@if($order->ordertype == 1) Stock Order @else Product Order @endif</td>
                 <td>{{ $order->name }}, {{$order->length}} m rol</td>
                 <td>{{ $order->quantity}}</td>
-                <td>{{ $order->supplier }}</td>
-                <td>€ {{ $order->quantity * $order->price }},-</td>
                 @php
                     $materialname = "$order->name, $order->length" . 'm rol';
                 @endphp
-                <input type="hidden" value="{{$materialname}}"/>
-
                 <td>
                     <button class="approveButton"
                             wire:click="approveOrder({{$order->id}}, '{{$materialname}}')"> Approve
@@ -36,7 +29,7 @@
                 </td>
                 <td>
                     <button class="declineButton "
-                            > Decline
+                    > Decline
                     </button>
                 </td>
             </tr>
